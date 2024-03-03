@@ -35,9 +35,9 @@ Follow these instructions to get a copy of the project up and running on your lo
 
 Modify the provided Java classes according to your database schema and requirements. Here's a brief overview of the files:
 
-- `DatabaseConnector.java`: Establishes a connection to the database.
-- `UserDAO.java`: Data Access Object for performing CRUD operations on the `User` table.
-- `User.java`: Model class representing a user entity.
+- `ConnectionDb.java`: Establishes a connection to the database.
+- `Insertion.java, Deletion.java`: Data Access Object for performing CRUD operations on the `Registation` table.
+- `DisplayTable.java`: Model class representing a user entity.
 
 Feel free to extend and customize the codebase to suit your needs!
 
