@@ -36,7 +36,7 @@ public class Crud {
 
                     stmt.executeUpdate(Sql);
 
-                    System.out.println("Table created successfully with name " + tableName);
+                    System.out.println("Table created successfully with name :" + tableName);
                 } catch (Exception e) {
                     // TODO: handle exception
                     System.out.println("Error in creating table" + e.getMessage());
@@ -46,8 +46,8 @@ public class Crud {
             case 6:
                 System.out.println("option 1 -- create a table");
                 System.out.println("Enter table name: ");
-                String tableName = myObj.nextLine();
-                String Sql = "DELETE TABLE " + tableName;
+                String tableName = myObj.next();
+                String Sql = "DROP TABLE " + tableName;
                 try {
                     Class.forName("com.mysql.cj.jdbc.Driver");
                     Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/db", "root", "");
@@ -55,7 +55,7 @@ public class Crud {
                     Statement stmt = con.createStatement();
                     stmt.executeUpdate(Sql);
 
-                    System.out.println("Table created successfully with name" + tableName);
+                    System.out.println("Table Deleted successfully with name :" + tableName);
                 } catch (Exception e) {
                     System.out.println("Error in deleting table" + e.getMessage());
                 }
