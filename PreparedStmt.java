@@ -7,7 +7,7 @@ public class PreparedStmt {
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/db", "root", "");
 
             PreparedStatement stmt = con.prepareStatement("insert into test values(?,?,?)");
-            stmt.setInt(1, 1);
+            stmt.setInt(1, 10);
             stmt.setString(2, "Rni");
             stmt.setInt(3, 21);
 
