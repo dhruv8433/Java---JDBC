@@ -45,5 +45,6 @@ Feel free to extend and customize the codebase to suit your needs!
 
 Contributions are welcome! If you have any suggestions, bug fixes, or enhancements, please feel free to open an issue or submit a pull request.
 
-### upcoming
-- [ ] Java Servlet
+# Other
+- [x] Java Servlet
+- [x] JSP Pages
