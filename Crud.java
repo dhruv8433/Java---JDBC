@@ -11,7 +11,8 @@ public class Crud {
         System.out.println("4. Update a Record");
         System.out.println("5. Search a Record");
         System.out.println("6. Delete a Table");
-        System.out.println("7. Exit");
+        System.out.println("7. Display a Table");
+        System.out.println("8. Exit");
 
         Scanner myObj = new Scanner(System.in);
         System.out.println("Choose Options: ");
@@ -128,7 +129,7 @@ public class Crud {
                 break;
 
             case 6:
-                System.out.println("option 1 -- create a table");
+                System.out.println("option 1 -- Delete a table");
                 System.out.println("Enter table name: ");
                 String tableName = myObj.next();
                 String Sql = "DROP TABLE " + tableName;
@@ -145,8 +146,31 @@ public class Crud {
                 }
                 break;
 
+            case 7:
+                System.out.println("option 7 -- Display Table");
+                try {
+                    Class.forName("com.mysql.cj.jdbc.Driver");
+                    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/db", "root", "");
+
+                    Statement stmt = con.createStatement();
+
+                    String sql = "SELECT * FROM test";
+
+                    ResultSet rs = stmt.executeQuery(sql);
+                    while (rs.next()) {
+                        // Display values
+                        System.out.print("ID: " + rs.getInt("id"));
+                        System.out.print(", First: " + rs.getString("name"));
+                        System.out.print(", Age: " + rs.getInt("age"));
+                    }
+                    rs.close();
+
+                } catch (Exception e) {
+                    // TODO: handle exception
+                    System.out.println("Error in displaying result" + e.getMessage());
+                }
+
             default:
-                System.out.println("Invalid choice");
                 break;
         }
     }
